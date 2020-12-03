@@ -12,7 +12,19 @@ void setup() {
   background(0);
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  mode = GAME;
+  mode = INTRO;
+
+  wkey = akey = skey = dkey = false;
+  myShip = new Spaceship();
+
+  myObjects = new ArrayList <GameObject>();
+
+  myObjects.add (new Asteroid());
+  myObjects.add (new Asteroid());
+  myObjects.add (new Asteroid());
+  myObjects.add (new Asteroid());
+  myObjects.add (new Asteroid());
+  myObjects.add (new Asteroid());
 }
 
 void draw() {

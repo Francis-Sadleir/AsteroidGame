@@ -4,25 +4,10 @@ ArrayList <GameObject> myObjects;
 boolean wkey, akey, skey, dkey, spacekey;
 
 void game() {
-  wkey = akey = skey = dkey = false;
-  myShip = new Spaceship();
-
-  myObjects = new ArrayList <GameObject>();
-
-  myObjects.add (new Asteroid());
-  myObjects.add (new Asteroid());
-  myObjects.add (new Asteroid());
-  myObjects.add (new Asteroid());
-  myObjects.add (new Asteroid());
-  myObjects.add (new Asteroid());
-}
-
-
-
-void gameAct() {
-
+  background(0);
   myShip.show();
   myShip.act();
+  
   int i = 0;
   while ( i < myObjects.size()  ) {
 
@@ -36,11 +21,6 @@ void gameAct() {
     }
   }
 }
-
-
-void gameShow() {
-}
-
 
 void gameClicks() {
 }
