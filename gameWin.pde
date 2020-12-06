@@ -1,0 +1,6 @@
+void gamewin() {
+}
+
+
+void gamewinClicks() {
+}

@@ -3,16 +3,19 @@ class Spaceship extends GameObject {
   //1. instance variables
   PVector direction;
   int shotTimer, threshold;
+  int healthTimer, healthThreshold;
   //2. constructors
   Spaceship() {
 
     location = new PVector (width/2, height/2);
     velocity = new PVector (0, 0);
     direction = new PVector (0, -0.1);
-    hp = 3;
+    hp = 5;
     size = 50;
     shotTimer = 0;
     threshold = 20;
+    healthTimer = 180;
+    healthThreshold = 180;
   }
 
   //3. behaviour functions
@@ -20,7 +23,11 @@ class Spaceship extends GameObject {
     pushMatrix();
     strokeWeight(2);
     stroke(255);
-    fill(0);
+    if (healthTimer < healthThreshold) {
+      fill (255, 0, 0);
+    } else {
+      fill(0);
+    }
     translate(location.x, location.y);
     rotate(direction.heading());
     triangle(-30, -20, -30, 20, 30, 0);
@@ -32,6 +39,7 @@ class Spaceship extends GameObject {
     super.act();
 
     shotTimer++;
+    healthTimer++;
 
     if (akey) direction.rotate(-radians(5));
     if (dkey) direction.rotate(radians(5));
@@ -60,8 +68,29 @@ class Spaceship extends GameObject {
     if (location.y < -25) {
       location.y = 825;
     }
-    if (myAsteroid.location.x/size > location.x/size || myAsteroid.location.y/size > location.y/size) {
-      hp = hp - 1;
+
+    int i = 0;
+    while (i < myObjects.size()) {
+      GameObject obj = myObjects.get(i);
+      if (obj instanceof Asteroid) {
+        if ( dist(location.x, location.y, obj.location.x, obj.location.y) <= size/2 + obj.size && healthTimer >= healthThreshold) {
+          hp = hp - 1;
+          healthTimer = 0;
+        }
+      }
+      i++;
+    }
+
+    i = 0;
+    while (i < myObjects.size()) {
+      GameObject obj = myObjects.get(i);
+      if (obj instanceof UfoBullet) {
+        if ( dist(location.x, location.y, obj.location.x, obj.location.y) <= size/2 + obj.size && healthTimer >= healthThreshold) {
+          hp = hp - 1;
+          healthTimer = 0;
+        }
+      }
+      i++;
     }
   }
 }

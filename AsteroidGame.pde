@@ -4,6 +4,7 @@ final int INTRO = 1;
 final int GAME = 2;
 final int PAUSE = 3;
 final int GAMEOVER = 4;
+final int GAMEWIN = 5;
 
 PImage pauseButton;
 
@@ -13,7 +14,7 @@ void setup() {
   background(0);
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  
+
   pauseButton = loadImage("pause_button.png");
 
   mode = INTRO;
@@ -41,6 +42,8 @@ void draw() {
     pause();
   } else if (mode == GAMEOVER) {
     gameover();
+  } else if (mode == GAMEWIN) {
+    gamewin();
   } else {
     println ("ERROR! Mode is " + mode);
   }
