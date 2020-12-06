@@ -60,5 +60,8 @@ class Spaceship extends GameObject {
     if (location.y < -25) {
       location.y = 825;
     }
+    if (myAsteroid.location.x/size > location.x/size || myAsteroid.location.y/size > location.y/size) {
+      hp = hp - 1;
+    }
   }
 }

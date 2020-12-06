@@ -17,7 +17,7 @@ class Ufo extends GameObject {
   void show() {
     pushMatrix();
     strokeWeight(15);
-    stroke(255, 0, 0);
+    stroke(230, 20, 20);
     fill(0);
     ellipse (location.x, location.y, 50, 50);
 

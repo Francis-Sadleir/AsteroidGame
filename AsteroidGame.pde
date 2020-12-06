@@ -5,6 +5,7 @@ final int GAME = 2;
 final int PAUSE = 3;
 final int GAMEOVER = 4;
 
+PImage pauseButton;
 
 
 void setup() {
@@ -12,7 +13,10 @@ void setup() {
   background(0);
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  mode = GAME;
+  
+  pauseButton = loadImage("pause_button.png");
+
+  mode = INTRO;
 
   wkey = akey = skey = dkey = false;
   myShip = new Spaceship();

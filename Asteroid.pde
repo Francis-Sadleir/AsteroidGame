@@ -1,7 +1,7 @@
 class Asteroid extends GameObject {
 
   Asteroid () {
-    location = new PVector(random(100, 700), random(100, 700));
+    location = new PVector(random(100, 200), random(100, 200));
     velocity = new PVector(2, 0);
     velocity.rotate (random(TWO_PI));
     hp = 1;
