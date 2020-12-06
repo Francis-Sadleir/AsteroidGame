@@ -1,5 +1,7 @@
 Spaceship myShip;
 Asteroid myAsteroid;
+Ufo myUfo;
+
 ArrayList <GameObject> myObjects;
 boolean wkey, akey, skey, dkey, spacekey;
 
@@ -7,6 +9,8 @@ void game() {
   background(0);
   myShip.show();
   myShip.act();
+  myUfo.show();
+  myUfo.act();
   
   int i = 0;
   while ( i < myObjects.size()  ) {

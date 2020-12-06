@@ -20,6 +20,7 @@ class Asteroid extends GameObject {
   void show() {
     strokeWeight(3);
     stroke(255);
+    fill(0);
     rect(location.x, location.y, size, size);
   }
 
@@ -43,6 +44,8 @@ class Asteroid extends GameObject {
 
     if (size < 30) {
       hp = 0;
+      //myObjects.add(new AsteroidFire());
+      //myObjects.add(new AsteroidFire());
     }
 
     if (location.x > 850) {

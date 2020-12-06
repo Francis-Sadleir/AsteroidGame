@@ -12,11 +12,11 @@ void setup() {
   background(0);
   rectMode(CENTER);
   textAlign(CENTER, CENTER);
-  mode = INTRO;
+  mode = GAME;
 
   wkey = akey = skey = dkey = false;
   myShip = new Spaceship();
-
+  myUfo = new Ufo();
   myObjects = new ArrayList <GameObject>();
 
   myObjects.add (new Asteroid());

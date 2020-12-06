@@ -1,10 +1,10 @@
-class Bullet extends GameObject {
+class UfoBullet extends GameObject {
 
   int timer;
 
-  Bullet() {
-    location = new PVector (myShip.location.x, myShip.location.y);
-    velocity = new PVector (myShip.direction.x, myShip.direction.y);
+  UfoBullet() {
+    location = new PVector (myUfo.location.x, myUfo.location.y);
+    velocity = new PVector (myUfo.direction.x, myUfo.direction.y);
     velocity.setMag(5);
     timer = 100;
     size = 10;
@@ -20,10 +20,6 @@ class Bullet extends GameObject {
   void act() {
     super.act();
 
-    timer --;
-    if (timer == 0) {
-      hp = 0;
-    }
 
     if (location.x < 2.5) {
       hp = 0;
