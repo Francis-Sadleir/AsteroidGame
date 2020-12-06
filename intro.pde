@@ -1,7 +1,7 @@
 void intro() {
-  
-  background(255,0,0);
+  background(255, 0, 0);
 }
 
 void introClicks() {
+  mode = GAME;
 }
