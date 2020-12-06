@@ -26,7 +26,6 @@ class Ufo extends GameObject {
       fill(230, 20, 20);
     }
     ellipse (location.x, location.y, 50, 50);
-
     popMatrix();
   }
   void act() {
