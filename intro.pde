@@ -6,8 +6,9 @@ void intro() {
   text("ASTEROIDS", 400, 100);
 }
 
+
 void introClicks() {
-  if (buttonPressed(400,400,200,100)) {
+  if (buttonPressed(400, 400, 200, 100)) {
     mode = GAME;
   }
 }

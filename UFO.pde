@@ -10,7 +10,7 @@ class Ufo extends GameObject {
     //direction = new PVector (myShip.location.x - myUfo.location.x, myShip.location.y - myUfo.location.y);
     hp = 3;
     shotTimer = 0;
-    threshold = 10;
+    threshold = 15;
     healthTimer = 180;
     healthThreshold = 180;
   }

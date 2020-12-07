@@ -5,7 +5,7 @@ class UfoBullet extends GameObject {
   UfoBullet() {
     location = new PVector (myUfo.location.x, myUfo.location.y);
     velocity = new PVector (myUfo.direction.x, myUfo.direction.y);
-    velocity.setMag(5);
+    velocity.setMag(3);
     timer = 100;
     size = 10;
     hp = 1;
